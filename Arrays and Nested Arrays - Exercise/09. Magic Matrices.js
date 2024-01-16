@@ -1,16 +1,9 @@
 function solve(array) {
 
-    //make a boolean variable
-    //calculate first column to find the desired number
-    //make 2x2 nested loops, one calculating the rows, the other the collumns
-    //check inside everyloop if the sum == magicSum
-    //if isMagic => return true, otherwise false;
-
     let magicSum = 0;
     let isMagical = true;
     let size = array.length;
 
-    //find the desired magic number
     for (let c = 0; c < array.length; c++) {
         magicSum += array[0][c];
     }
@@ -23,7 +16,6 @@ function solve(array) {
         if (sumR != magicSum) {
             isMagical = false
         }
-
     }
 
     for (let col = 0; col < size; col++) {
@@ -34,11 +26,8 @@ function solve(array) {
         if (sumC != magicSum) {
             isMagical = false
         }
-
     }
     console.log(isMagical)
-
-    // console.log(magicSum)
 
 };
 
