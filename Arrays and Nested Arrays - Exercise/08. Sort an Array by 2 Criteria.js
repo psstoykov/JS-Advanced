@@ -7,9 +7,9 @@ function solve(array) {
 
 };
 
-solve(['alpha',
-    'beta',
-    'gamma']);
+// solve(['alpha',
+//     'beta',
+//     'gamma']);
 
 // solve(['Isacc',
 //     'Theodor',
@@ -18,8 +18,8 @@ solve(['alpha',
 //     'George']
 // );
 
-// solve(['test',
-//     'Deny',
-//     'omen',
-//     'Default']);
+solve(['test',
+    'Deny',
+    'omen',
+    'Default']);
 
