@@ -1,7 +1,13 @@
-let num = 32;
+function solve() {
 
-chop = (n) => n / 2;
-chop(num)
-chop(num)
+    let arr = ['Sofia', 'Pleven', 'Lovech', 'Varna', 'Burgas']
+    let search = 'o'
 
-console.log(num)
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i].includes(search)) {
+            console.log('boo')
+        }
+    }
+}
+
+solve();
