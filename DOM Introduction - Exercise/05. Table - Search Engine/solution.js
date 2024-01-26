@@ -3,15 +3,18 @@ function solve() {
 
    function onClick() {
 
-      let collection = document.querySelectorAll('tbody tr');
-      for (let i = 0; i < collection.length; i++) {
-         let row = collection[i];
-         for (let j = 0; j < row.length; j++) {
-            let el = row.children[j].textContent
-            console.log(el)
+      let searchBox = document.getElementById('searchField');
+      let searchWord = searchBox.value;
+      let tRows = document.querySelectorAll('tbody tr');
+
+      for (let row of tRows) {
+         if (row.textContent.includes(searchWord)) {
+            row.classList.add('select');
+         } else {
+            row.classList.remove('select');
          }
 
-
       }
+      searchBox.value = '';
    }
 }
