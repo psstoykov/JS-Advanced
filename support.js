@@ -1,13 +1,13 @@
 function solve() {
 
-    let arr = ['Sofia', 'Pleven', 'Lovech', 'Varna', 'Burgas']
-    let search = 'o'
+    let pattern = /\w+\@\w+\.\w+/gm
 
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i].includes(search)) {
-            console.log('boo')
-        }
+    let str = 'dddd@abv.bg'
+
+    if (pattern.test(str)) {
+        console.log('yes')
+    } else {
+        console.log('no')
     }
 }
-
 solve();
