@@ -1,10 +1,7 @@
-function solve() {
+function solve(input) {
 
-    let string = 'aaa';
-    string = string.split("")
-        .map(el => el = el.charCodeAt() + 1)
-        .map(el => String.fromCharCode(el));
-
-    console.log(string)
+    for (let product of input) {
+        console.log(product.decFactor)
+    }
 }
-solve();
+solve([{ "name": "Sofa", "img": "https://res.cloudinary.com/maisonsdumonde/image/upload/q_auto,f_auto/w_200/img/grey-3-seater-sofa-bed-200-13-0-175521_9.jpg", "price": 150, "decFactor": 1.2 }]);
