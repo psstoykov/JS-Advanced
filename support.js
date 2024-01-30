@@ -1,13 +1,10 @@
 function solve() {
 
-    let pattern = /\w+\@\w+\.\w+/gm
+    let string = 'aaa';
+    string = string.split("")
+        .map(el => el = el.charCodeAt() + 1)
+        .map(el => String.fromCharCode(el));
 
-    let str = 'dddd@abv.bg'
-
-    if (pattern.test(str)) {
-        console.log('yes')
-    } else {
-        console.log('no')
-    }
+    console.log(string)
 }
 solve();
