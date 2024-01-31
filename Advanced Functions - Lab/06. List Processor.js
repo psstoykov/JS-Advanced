@@ -1,5 +1,6 @@
 function solve(input) {
 
+    let result = [];
     let methods = {
         add: (string) => result.push(string),
         remove: (string) => result = result.filter(a => a != string),
@@ -7,10 +8,11 @@ function solve(input) {
     }
 
 
-    for (let token of input) {
-        let [op, string] = token.split(" ")
-
+    for (let tokens of input) {
+        let [op, string] = tokens.split(" ");
+        methods[op](string)
     }
+
 }
 
 
