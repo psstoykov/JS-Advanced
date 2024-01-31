@@ -1,7 +1,9 @@
-function solve(input) {
+function solve() {
 
-    for (let product of input) {
-        console.log(product.decFactor)
-    }
+    let result = [2, 3, 4, 5, 6, 7, 8, 9, 2, 2, 2]
+    result = result.filter(a => a != 2)
+
+    console.log(result)
 }
-solve([{ "name": "Sofa", "img": "https://res.cloudinary.com/maisonsdumonde/image/upload/q_auto,f_auto/w_200/img/grey-3-seater-sofa-bed-200-13-0-175521_9.jpg", "price": 150, "decFactor": 1.2 }]);
+
+solve()
