@@ -12,7 +12,6 @@ function solve(input) {
         let [op, string] = tokens.split(" ");
         methods[op](string)
     }
-
 }
 
 
