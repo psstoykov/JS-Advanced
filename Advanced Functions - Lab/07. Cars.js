@@ -4,34 +4,49 @@ function solve(input) {
 
     let operator = {
         create: (name) => {
-
             result[name] = {};
         },
-        createInherit: (name, parentName) => {
-
-            result[name] = {}
+        createInherit: (name, inherit, parentName) => {
+            // result[name] = {}
             result[name].Object.create(parentName)
         },
         set: (name, key, value) => {
-
             result[name][key] = value;
         },
         print: (name) => {
             let entries = Object.entries(result[name]);
+            let buff = [];
+
             for (let [key, value] of entries) {
-                console.log(`${key}:${value}`)
+                buff.push(`${key}:${value}`);
             }
+
+            let parentObj = Object.getPrototypeOf(result[name])
+            let parentEntries = Object.entries(parentObj)
+
+            for (let [key, value] of parentEntries) {
+                buff.push(`${key}:${value}`);
+            }
+            console.log(buff.join(","))
         }
     }
 
     for (let tokens of input) {
-        let [op, name, key, value] = tokens.split(" ")
+        let dataArr = tokens.split(" ")
 
-        operator[op](name, key, value)
+        if (dataArr.length == 2) {
+            let [op, name] = dataArr;
+            operator[op](name);
+        } else {
+            if (dataArr[0] == "create") {
+                let [op, name, inherit, parent] = dataArr
+                operator[op](name, inherit, parent)
+            } else {
+                let [op, name, type, style] = dataArr
+                operator[op](name, type, style)
+            }
+        }
     }
-
-
-
 }
 
 // solve(['create c1',
