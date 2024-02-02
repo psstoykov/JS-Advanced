@@ -10,11 +10,8 @@ function solve() {
 
     let parent = Object.getPrototypeOf(c2)
 
-    // for (let [key, value] of parentEntries) {
-    //     console.log(key, value)
-    // }
     console.log(parent)
-    console.log(c2)
+    console.log(c2.__proto__)
 }
 
 solve()

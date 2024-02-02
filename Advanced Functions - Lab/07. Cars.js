@@ -1,16 +1,20 @@
 function solve(input) {
 
-    let result = {}
+    let result = {};
 
     let operator = {
         create: (name) => {
             result[name] = {};
         },
         createInherit: (name, inherit, parentName) => {
-            // result[name] = {}
-            result[name].Object.create(parentName)
+
+            result[name] = Object.create(result[parentName])
         },
         set: (name, key, value) => {
+
+            if (!result[name]) {
+                result[name] = {};
+            }
             result[name][key] = value;
         },
         print: (name) => {
@@ -21,18 +25,18 @@ function solve(input) {
                 buff.push(`${key}:${value}`);
             }
 
-            let parentObj = Object.getPrototypeOf(result[name])
-            let parentEntries = Object.entries(parentObj)
-
+            let parentEntries = Object.entries(result[name].__proto__);
+            debugger;
             for (let [key, value] of parentEntries) {
-                buff.push(`${key}:${value}`);
+                buff.push(`${key}:${value}`)
             }
+
             console.log(buff.join(","))
         }
     }
 
     for (let tokens of input) {
-        let dataArr = tokens.split(" ")
+        let dataArr = tokens.split(" ");
 
         if (dataArr.length == 2) {
             let [op, name] = dataArr;
