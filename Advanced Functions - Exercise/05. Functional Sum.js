@@ -11,10 +11,6 @@ function add(num) {
 
 };
 
-
-
-
-
-console.log(add(1)(2)(3).toString())
+console.log(add(1)(2)(3).toString());
 // console.log(add(2)(3));
 console.log(add(1)(6)(-3).toString());

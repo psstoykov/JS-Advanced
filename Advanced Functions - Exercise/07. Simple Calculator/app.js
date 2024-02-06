@@ -1,25 +1,28 @@
 function calculator() {
-    let num1Ref = document.getElementById('num1');
-    let num2Ref = document.getElementById('num2');
-    let resultRef = document.getElementById('result');
 
+    let num1, num2, result
 
     return {
-        init: (selector1, selector2, resultSelector) => {
-            let num1 = num1Ref.value = Number(selector1)
-            num2Ref.value = Number(selector2)
-
-        },
-        add: () => {
-            resultRef.textContent = num1Ref.value
-        },
-        subtract: () => {
-
-        }
+        init,
+        add,
+        subtract
     }
-
+    function init(selector1, selector2, resultSelector) {
+        num1 = document.querySelector(selector1);
+        num2 = document.querySelector(selector2);
+        result = document.querySelector(resultSelector);
+    }
+    function add() {
+        result.value = Number(num1.value) + Number(num2.value)
+        return result.value
+    }
+    function subtract() {
+        result.value = Number(num1.value) - Number(num2.value)
+        return result.value
+    }
 
 }
 
 const calculate = calculator();
-calculate.init('#num1', '#num2', '#result'); 
+calculate.init('#num1', '#num2', '#result');
+// console.log(calculate)
