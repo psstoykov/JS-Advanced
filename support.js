@@ -1,17 +1,10 @@
 function solve() {
+    let num = 2653;
 
-    let c1 = {
-        type: "car",
-        color: "red"
-    }
+    let result = Math.trunc(num / 1000)
 
-    let c2 = Object.create(c1)
-    c2.work = "worker"
+    console.log(result)
 
-    let parent = Object.getPrototypeOf(c2)
-
-    console.log(parent)
-    console.log(c2.__proto__)
 }
 
 solve()
