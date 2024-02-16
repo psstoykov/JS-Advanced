@@ -1,10 +1,20 @@
 function solve() {
-    let num = 2653;
 
-    let result = Math.trunc(num / 1000)
+    let outofstock = []
+    let inventory = [
 
-    console.log(result)
+        { 'car': 5 },
+        { 'horse': 3 },
+        { 'hat': 10 },
+        { 'pen': 6 }
+    ]
 
+
+    const index = inventory.findIndex((el) => el.hasOwnProperty('pen'))
+
+    let a = '55';
+    let b = '66'
+    console.log(a += b)
 }
 
 solve()
